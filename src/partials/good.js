@@ -16,8 +16,6 @@ class Good {
 
     this.totalPriceWithTaxWithTax = this.calcTax(this._category);
 
-  
-
   }
 
 
@@ -86,9 +84,7 @@ class Good {
       tax *= this._qty;
 
     } 
-
-    
-    
+ 
     this.taxes = (this.taxes + tax);
 
     return tax;
@@ -116,9 +112,6 @@ class Good {
 
   }
 
-
-
-
 }
 
 
@@ -131,7 +124,7 @@ const cd = new Good("CD", "music CD", 14.99, 1, false);
 
 const chocolate = new Good("chocolate bar", "food", 0.85, 1, false);
 
-const input1 = [book, cd, chocolate]
+const card1 = [book, cd, chocolate]
 
 
 /*dati output2*/
@@ -141,7 +134,7 @@ const profume = new Good("profume bottle", "profume", 47.50, 1, true);
 
 const chocolateBox = new Good("chocolate box", "food", 10, 1, true);
 
-const input2 = [chocolateBox, profume];
+const card2 = [chocolateBox, profume];
 
 
 /*dati output3*/
@@ -154,4 +147,4 @@ const pills = new Good("packet of headache pills", "drug", 9.75, 1, false);
 
 const chocolateBox2 = new Good("chocolate box", "food", 11.25, 3, true);
 
-const input3 = [profume2, profume3, pills, chocolateBox2];
+const card3 = [profume2, profume3, pills, chocolateBox2];

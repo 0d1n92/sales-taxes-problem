@@ -1,9 +1,9 @@
 
 let counterOutput = 0;
 
-print(input1)
-print(input2)
-print(input3)
+print(card1)
+print(card2)
+print(card3)
 
 
 function print(array) {
@@ -40,13 +40,9 @@ function print(array) {
     text = `<li>${element._qty} ${element._name} at ${element.totalPriceWithTaxWithTax}</li>`;
   }
   
-    
-
     containerUl.innerHTML+= text;
 
   });
-
-  
 
   containerUl.innerHTML += `<li>Sales Taxes ${totalTax.toFixed(2)}</li>`;
 
