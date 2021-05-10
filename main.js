@@ -1,3 +1,4 @@
+let counterOutput= 0;
 
 class Good {
 
@@ -16,7 +17,7 @@ class Good {
     this._price = this.isNumber(price);
 
     this.totalPrice = this.calcTax(this._category);
-
+    
   }
 
  
@@ -126,7 +127,7 @@ const input1 = [book,cd, chocolate]
 
 /*stampa output 1*/
 
-print(input1)
+
 
 
 
@@ -141,7 +142,7 @@ const chocolateBox = new Good("chocolate box", "food", 10, 1, true);
 
 const input2 = [profume,chocolateBox];
 
-print(input2)
+
 
 /*dati output3*/
 
@@ -155,25 +156,45 @@ const chocolateBox2 = new Good("chocolate box", "food", 11.25, 3, true);
 
 const input3 = [profume2, profume3, pills, chocolateBox2];
 
+print(input1)
+print(input2)
 print(input3)
+
+
+
 
 
 
 function print(array) {
 
+  let text = "";
+
+  counterOutput++;
+
+  const containerUl = document.getElementById("output");
+
+  containerUl.innerHTML += `<li><strong>OUTPUT ${counterOutput}<strong></li>`
+
+  
   array.forEach(element => {
 
 
   if (element._importated) {
     
-    console.log(`${element._qty} importated ${element._name} at ${element.totalPrice}`);
+   
+    text = `<li> ${element._qty} importated ${element._name} at ${element.totalPrice}</li>`;
 
   } else {
-    console.log(`${element._qty} ${element._name} at ${element.totalPrice}`);
+
+    text = `<li>${element._qty} ${element._name} at ${element.totalPrice}</li>`;
   }
+  
+
+    containerUl.innerHTML+= text;
 
   });
 
+  
 }
 
 
