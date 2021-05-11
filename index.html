@@ -5,14 +5,60 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+
+<style>
+  /* RESET */
+  * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  }
+  button,input,optgroup,select,textarea {
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
+  border: 0;
+  }
+  select:focus,
+  button:focus,
+  input:focus,
+  textarea:focus {
+  border: 0;
+  outline: none;
+  }
+  /*RESET CLOSE*/
+
+  ul > li{
+    list-style: none;
+  }
+
+  #container {
+    margin: 80px auto;
+    width: 600px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .output_title {
+    margin: 10px 0;
+  }
+  
+</style>
   
 </head>
 <body>
+  <div id="container">
+  <ul id="input">
+
+  </ul>
   <ul id="output">
 
   </ul>
+  </div>
 
   <script src="src/partials/good.js"></script>
+  <script src="src/partials/input.js"></script>
   <script src="src/main.js"></script>
 </body>
 </html>
