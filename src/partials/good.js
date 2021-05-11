@@ -26,7 +26,7 @@ class Good {
 
     }
 
-    return x
+    return x;
   }
 
 
@@ -35,21 +35,21 @@ class Good {
     //moltiplico il prezzo senza tasse per la quantità
     let total = this._price * this._qty;
 
-    //filtro per cateforia (cibo, medicinali e libri non hanno aliquota al 10%)
+    //filtro per categoria (cibo, medicinali e libri non hanno aliquota al 10%)
 
     if (category != "food" && category != "book" && category != "drug") {
 
-      //al tatale aggiungo l'aliquota al 10%
+      //al totale aggiungo l'aliquota al 10%
       total += this.purchaseTax(this._price);
 
       if (this._importated) {
-          //se è importata aggiungo ache la tasse di importazione al 5%
+          //se è importata aggiungo anche la tasse di importazione al 5%
           total += this.calcImportedTax(this._price);
 
       }
 
     } else if (this._importated) {
-        //se è importata aggiungo ache la tasse di importazione al 5% anche se si tratta di categorie assenti da aliquota di vendita
+        //se è importata aggiungo anche la tasse di importazione al 5% anche se si tratta di categorie assenti da aliquota di vendita
       total += this.calcImportedTax(this._price);
 
     }
@@ -64,10 +64,8 @@ class Good {
   precise(x) {
     //arrotondo allo 0.05 più vicino
 
-    //c'è un'intervallo di 20 numeri tra 0 1 (0,05(1) - 0,10(2) - 0,15 -0,20...) ognuno di questi corrisponde ad un'intero con math ceil arrotondo al più vicino dividendo per venti operazione inversa ritorna il numero originalòe 
-    let a = (Math.ceil(x * 20) / 20);
-
-    return (a);
+    //c'è un'intervallo di 20 numeri tra 0 1 (0,05(1) - 0,10(2) - 0,15 -0,20...) ognuno di questi corrisponde ad un'intero con math ceil arrotondo al più vicino dividendo per venti operazione inversa ritorna il numero originale 
+    return Math.ceil(x * 20) / 20;
 
   }
 
@@ -85,7 +83,7 @@ class Good {
 
     } 
  
-    this.taxes = (this.taxes + tax);
+    this.taxes += tax;
 
     return tax;
   }
@@ -104,7 +102,7 @@ class Good {
 
     }
     
-    this.taxes = this.taxes + tax ;
+    this.taxes += tax ;
 
     return tax;
   }
